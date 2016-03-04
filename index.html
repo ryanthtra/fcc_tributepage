@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Commander Shepard: a Tribute</title>
+    <meta charset="utf-8" />
+    <link href="http://db.onlinewebfonts.com/c/de335dd5a66ff095f317757fc7fb58a5?family=Korataki" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        $(document).ready(function() {
+            $(".bio").addClass('bio-invisible');
+            var name = null; 
+            var gender = null;
+            var history_class = null; 
+            var profile_class = null; 
+            
+            $("#submit-button").click(function() {
+                $(".bio").addClass('bio-invisible');
+                
+                name = $(".name-input input[type=\"text\"]").val();
+                gender = $(".gender-radio input:checked").val();
+                history_class = $(".history-radio input:checked").val();
+                profile_class = $(".profile-radio input:checked").val();
+                     
+                $(".bio-name").html(name);
+                var selectors = "." + history_class + "." + profile_class; 
+                var element = $(selectors);
+                element.removeClass("bio-invisible");
+                if (gender == "male")
+                {
+                    $(".bio-pronoun").html("he");
+                    $(".bio-pronoun-poss").html("his");
+                    $(".bio-pronoun-obj").html("him");
+                }
+                else
+                {
+                    $(".bio-pronoun").html("she");
+                    $(".bio-pronoun-poss").html("her");
+                    $(".bio-pronoun-obj").html("her");
+                }
+            });
+        });
+    </script>
+</head>
+
+
+<body>
+<div class="container-fluid">
+    <h1 class="text-center">Commander Shepard: a Tribute</h1>
+    
+    <div class="row text-center"><img src="http://im3.freeforumzone.it/up/37/37/4009612079.jpg" alt="N7 Logo" /></div>
+    
+    <h2 class="text-center">Create the Commander's Biography</h2>
+    <div class="container">
+        <div class="row gender-radio">
+            <div class="col-sm-4"><p>Choose gender: </p></div>
+            <div class="col-sm-4"><label><input type="radio" value="male" name="gender" checked>Male</label></div>
+            <div class="col-sm-4"><label><input type="radio" value="female" name="gender">Female</label></div>
+        </div>
+        
+        <div class="row history-radio">
+            <div class="col-sm-4"><p>Choose pre-service history: </p></div>
+            <div class="col-sm-2"><label><input type="radio" value="earthborn" name="history" checked>Earthborn</label></div>
+            <div class="col-sm-2"><label><input type="radio" value="spacer" name="history">Spacer</label></div>
+            <div class="col-sm-2"><label><input type="radio" value="colonist" name="history">Colonist</label></div>
+        </div>
+        
+        <div class="row profile-radio">
+            <div class="col-sm-4"><p>Choose psychological profile: </p></div>
+            <div class="col-sm-2"><label><input type="radio" value="survivor" name="profile" checked>Sole Survivor</label></div>
+            <div class="col-sm-2"><label><input type="radio" value="hero" name="profile">War Hero</label></div>
+            <div class="col-sm-2"><label><input type="radio" value="ruthless" name="profile">Ruthless</label></div>
+        </div>
+        
+        <div class="row name-input">
+            <div class="col-sm-4"><p>Enter name: </p></div>
+            <div class="col-sm-6"><input type="text" value="John" required></div>
+        </div>
+        
+        <div class="row text-center">
+            <input type="submit" class="btn btn-default text-center" id="submit-button">
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="bio spacer survivor">
+            <p>Both of <span class="bio-name"></span> Shepard's parents were in the Alliance military. <span class="bio-pronoun-poss"></span> childhood was spent on ships and stations as they transferred from posting to posting. Following in <span class="bio-pronoun-poss"></span> parents' footsteps, <span class="bio-name"></span> enlisted at the age of eighteen.</P>
+
+            <p>One of <span class="bio-name"></span>'s first missions was an expedition to investigate Akuze, a lush world on the outskirts of Alliance space that had suddenly dropped out of contact. Arriving on the surface, <span class="bio-pronoun-poss"></span> patrol found the settlement intact, but there were no survivors.</p>
+
+            <p>At nightfall, the thresher maws struck - mindless abominations of teeth and tentacles that rose from beneath the earth. Constant gunfire couldn't drown out the shrieks of <span class="bio-name"></span>'s fellow soldiers as they were dragged down to a gruesome death.</p>
+
+            <p>Fifty marines died on Akuze. <span class="bio-name"></span> was the only one to make it back to the landing zone alive. A monument on the planet commemorates the massacre, a grim reminder of the price humanity must pay as they spread throughout the stars.</p>
+        </div>
+        <div class="bio spacer hero">
+            <p>Born into a naval family, <span class="bio-name"></span> Shepard spent <span class="bio-pronoun-poss"></span> childhood on ships and stations. <span class="bio-pronoun" style="text-transform: capitalize"></span> moved from posting to posting as <span class="bio-pronoun-poss"></span> parents were reassigned. <span class="bio-pronoun" style="text-transform: capitalize"></span> enlisted in the Alliance military <span class="bio-pronoun-obj"></span>self on the day you turned eighteen.</P>
+
+            <p><span class="bio-name"></span> was on shore leave at Elysium when the first wave of the Skyllian Blitz struck. A massive coalition force of slavers, crime syndicates, and batarian warlords attacked the human colony, determined to wipe it out.</p>
+
+            <p><span class="bio-name"></span> rallied the civilian inhabitants, leading them in their desperate fight to hold off the invaders. When enemy troops broke through the colony's defenses, <span class="bio-pronoun"></span> single-handedly held them off and sealed the breach.</p>
+
+            <p>After hours of brutal fighting, reinforcements finally arrived and the enemy broke ranks and fled. Because of <span class="bio-name"></span>'s actions, Elysium was saved, and <span class="bio-pronoun"></span> are regarded throughout the Alliance as a true hero.</p>
+        </div>
+        <div class="bio spacer ruthless">
+            <p>Born into a naval family, <span class="bio-name"></span> Shepard spent <span class="bio-pronoun-poss"></span> childhood on ships and stations. <span class="bio-pronoun" style="text-transform: capitalize"></span> moved from posting to posting as <span class="bio-pronoun-poss"></span> parents were reassigned, and it was only natural <span class="bio-pronoun"></span> would follow in their footsteps by enlisting in the Alliance military when <span class="bio-pronoun"></span> came of age.</P>
+
+            <p>After several years of service, <span class="bio-name"></span> joined the campaign to rid the Skyllian Verge of batarian slavers and other criminal elements. The final battle came when Alliance forces laid siege to Torfan, a slaver base built miles below the surface of a desolate moon. The superiority of the human fleet was wasted in the assault on the underground bunker, but <span class="bio-pronoun"></span> led a corps of elite ground troops into the heart of the enemy base.</p>
+
+            <p>Nearly three-quarters of <span class="bio-name"></span>'s own squad perished in the vicious close-quarters fighting...a cost <span class="bio-pronoun"></span> were willing to pay to make sure not a single slaver made it out of Torfan alive.</p>
+        </div>
+        <div class="bio colonist survivor">
+            <p><span class="bio-name"></span> Shepard was raised on Mindoir on the fringes of the Attican Traverse. When <span class="bio-pronoun"></span> were sixteen, the colony was raided by slavers. The entire settlement was razed and <span class="bio-pronoun-poss"></span> friends and family were slaughtered. A passing Alliance patrol rescued <span class="bio-pronoun-obj"></span>, but all <span class="bio-pronoun"></span> loved was destroyed.</P>
+
+            <p><span class="bio-name"></span> Shepard enlisted with the Alliance military, eventually volunteering to go to Akuze, a colony that had mysteriously dropped out of contact. As soon as it arrived on the surface, <span class="bio-pronoun-poss"></span> patrol was attacked by thresher maws - mindless abominations of teeth and tentacles that rose up from beneath the earth. Constant gunfire couldn't drown out the shrieks of <span class="bio-pronoun-poss"></span> fellow soldiers as they were dragged down to a gruesome death.</p>
+
+            <p>Fifty marines died on Akuze; <span class="bio-name"></span> were the only one to make it back to the landing zone alive. A monument on the planet commemorates the massacre, a grim reminder of the price humanity must pay as they spread throughout the stars.</p>
+        </div>
+        <div class="bio colonist hero">
+            <p><span class="bio-name"></span> Shepard was raised on Mindoir on the fringes of the Attican Traverse. When <span class="bio-pronoun"></span> were sixteen, the colony was raided by slavers. The entire settlement was razed and <span class="bio-pronoun-poss"></span> friends and family were slaughtered. A passing Alliance patrol rescued <span class="bio-pronoun-obj"></span>, but all <span class="bio-pronoun"></span> loved was destroyed.</P>
+
+            <p><span class="bio-name"></span> enlisted with the Alliance military and was posted at Elysium. <span class="bio-pronoun" style="text-transform: capitalize"></span> were there during the Skyllian Blitz, an attack on the colony by a massive coalition force of slavers, crime syndicates, and batarian warlords.</p>
+
+            <p><span class="bio-name"></span> rallied the civilian inhabitants, leading them in their desperate fight to hold off the invaders. When enemy troops broke through the colony's defenses, <span class="bio-pronoun"></span> single-handedly held them off and sealed the breach.</p>
+
+            <p>After hours of brutal fighting, reinforcements finally arrived and the enemy broke ranks and fled. Because of <span class="bio-name"></span>'s actions, Elysium was saved, and <span class="bio-pronoun"></span> was regarded throughout the Alliance as a true hero.</p>
+        </div>
+        <div class="bio colonist ruthless">
+            <p><span class="bio-name"></span> Shepard was raised on Mindoir on the fringes of the Attican Traverse. When <span class="bio-pronoun"></span> was sixteen, the colony was raided by slavers. The entire settlement was razed and <span class="bio-pronoun-poss"></span> friends and family were slaughtered. A passing Alliance patrol rescued <span class="bio-pronoun-obj"></span>, but all <span class="bio-pronoun"></span> loved was destroyed.</P>
+
+            <p><span class="bio-name"></span> enlisted with the Alliance military, joining the long and bloody campaign to rid the Skyllian Verge of batarian slavers and other criminal elements. The final battle came when Alliance forces laid siege to Torfan, a slaver base built miles below the surface of a desolate moon. The superiority of the human fleet was wasted in the assault on the underground bunker, but <span class="bio-pronoun"></span> led a corps of elite ground troops into the heart of the enemy base.</p>
+
+            <p>Nearly three-quarters of <span class="bio-name"></span>'s own squad perished in the vicious close-quarters fighting, a cost <span class="bio-pronoun"></span> was willing to pay to make sure not a single slaver made it out of Torfan alive.</p>
+        </div>
+        <div class="bio earthborn survivor">
+            <p><span class="bio-name"></span> Shepard was born on Earth, but <span class="bio-pronoun"></span> never knew <span class="bio-pronoun-poss"></span> parents. A child of the streets, <span class="bio-pronoun"></span> learned to live by <span class="bio-pronoun-poss"></span> wits and guts, surviving in the hidden underbelly of the megatropolises of humanity's homeworld.</P>
+
+            <p>Eager to find a better life, <span class="bio-name"></span> joined the Alliance military when <span class="bio-pronoun"></span> came of age. <span class="bio-pronoun" style="text-transform: capitalize"></span> volunteered for an expedition to Akuze: a lush world on the outskirts of Alliance space that had suddenly dropped out of contact. Arriving on the surface <span class="bio-pronoun-poss"></span> patrol found the settlement intact, but no survivors.</p>
+
+            <p>At nightfall, the thresher maws struck - mindless abominations of teeth and tentacles that rose up from beneath the earth. Constant gunfire couldn't drown out the shrieks of <span class="bio-name"></span>'s fellow soldiers as they were dragged down to a gruesome death.</p>
+
+            <p>Fifty marines died on Akuze; <span class="bio-name"></span> was the only one to make it back to the landing zone alive. A monument on the planet commemorates the massacre, a grim reminder of the price humanity must pay as they spread throughout the stars.</p>
+        </div>
+        <div class="bio earthborn hero">
+            <p><span class="bio-name"></span> Shepard was born on Earth, but <span class="bio-pronoun"></span> never knew <span class="bio-pronoun-poss"></span> parents. A child of the streets, <span class="bio-pronoun"></span> learned to live by <span class="bio-pronoun-poss"></span> wits and guts, surviving in the hidden underbelly of the megatropolises of humanity's homeworld.</P>
+
+            <p>Eager to find a better life, <span class="bio-name"></span> joined the Alliance military when <span class="bio-pronoun"></span> came of age. <span class="bio-pronoun" style="text-transform: capitalize"></span> was on shore leave at Elysium when the first wave of the Skyllian Blitz struck. A massive coalition force of slavers, crime syndicates, and batarian warlords attacked the human colony, determined to wipe it out.</p>
+
+            <p><span class="bio-name"></span> rallied the civilian inhabitants, leading them in their desperate fight to hold off the invaders. When enemy troops broke through the colony's defenses, <span class="bio-pronoun"></span> single-handedly held them off and sealed the breach.</p>
+
+            <p>After hours of brutal fighting, reinforcements finally arrived and the enemy broke ranks and fled. Because of <span class="bio-name"></span>'s actions, Elysium was saved, and <span class="bio-pronoun"></span> was regarded throughout the Alliance as a true hero.</p>
+        </div>
+        <div class="bio earthborn ruthless">
+            <p><span class="bio-name"></span> Shepard was born on Earth, but <span class="bio-pronoun"></span> never knew <span class="bio-pronoun-poss"></span> parents. A child of the streets, <span class="bio-pronoun"></span> learned to live by <span class="bio-pronoun-poss"></span> wits and guts, surviving in the hidden underbelly of the megatropolises of humanity's home world.</P>
+
+            <p>Eager to find a better life, <span class="bio-name"></span> joined the Alliance military when <span class="bio-pronoun"></span> came of age. <span class="bio-pronoun" style="text-transform: capitalize"></span> was assigned to the campaign to rid the Skyllian Verge of batarian slavers and other criminal elements. The final battle came when Alliance forces laid siege to Torfan, a slaver base built miles below the surface of a desolate moon. The superiority of the human fleet was wasted in the assault on the underground bunker, but <span class="bio-pronoun"></span> led a corps of elite ground troops into the heart of the enemy base.</p>
+
+            <p>Nearly three-quarters of <span class="bio-name"></span>'s own squad perished in the vicious close-quarters fighting, a cost <span class="bio-pronoun"></span> was willing to pay to make sure not a single slaver made it out of Torfan alive.</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

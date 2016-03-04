@@ -1,0 +1,11 @@
+body {
+    font-family: Korataki;
+}
+
+.bio-visible {
+    display: block;
+}
+
+.bio-invisible {
+    display: none;
+}
