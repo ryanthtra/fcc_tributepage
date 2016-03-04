@@ -26,7 +26,7 @@
             var profile_class = null; 
             
             $("#submit-button").click(function() {
-                $(".bio,.img-logo,.img-thumbnail").addClass('bio-invisible');
+                $(".bio,.img-logo,.img-thumbnail,.bio-form").addClass('bio-invisible');
                 
                 name = $(".name-input input[type=\"text\"]").val();
                 gender = $(".gender-radio input:checked").val();
@@ -52,6 +52,11 @@
                     $(".img-female").removeClass("bio-invisible");
                 }
             });
+            
+            $("#redo-button").click(function() {
+                $(".bio, .img-thumbnail").addClass('bio-invisible');
+                $(".img-logo,.bio-form").removeClass('bio-invisible');
+            });
         });
     </script>
 </head>
@@ -68,8 +73,8 @@
         <img src="http://im3.freeforumzone.it/up/37/37/4009612079.jpg" class="img-logo" alt="N7 Logo" />
         </div>
     
-    <h2 class="text-center">Create the Commander's Biography</h2>
-    <div class="container">
+    <div class="container bio-form">
+        <h2 class="text-center">Create the Commander's Biography</h2>
         <div class="row gender-radio">
             <div class="col-sm-4"><p>Choose gender: </p></div>
             <div class="col-sm-4"><label><input type="radio" value="male" name="gender" checked>Male</label></div>
@@ -124,19 +129,19 @@
 
             <p>After several years of service, <span class="bio-name"></span> joined the campaign to rid the Skyllian Verge of batarian slavers and other criminal elements. The final battle came when Alliance forces laid siege to Torfan, a slaver base built miles below the surface of a desolate moon. The superiority of the human fleet was wasted in the assault on the underground bunker, but <span class="bio-pronoun"></span> led a corps of elite ground troops into the heart of the enemy base.</p>
 
-            <p>Nearly three-quarters of <span class="bio-name"></span>'s own squad perished in the vicious close-quarters fighting...a cost <span class="bio-pronoun"></span> were willing to pay to make sure not a single slaver made it out of Torfan alive.</p>
+            <p>Nearly three-quarters of <span class="bio-name"></span>'s own squad perished in the vicious close-quarters fighting...a cost <span class="bio-pronoun"></span> was willing to pay to make sure not a single slaver made it out of Torfan alive.</p>
         </div>
         <div class="bio colonist survivor">
-            <p><span class="bio-name"></span> Shepard was raised on Mindoir on the fringes of the Attican Traverse. When <span class="bio-pronoun"></span> were sixteen, the colony was raided by slavers. The entire settlement was razed and <span class="bio-pronoun-poss"></span> friends and family were slaughtered. A passing Alliance patrol rescued <span class="bio-pronoun-obj"></span>, but all <span class="bio-pronoun"></span> loved was destroyed.</P>
+            <p><span class="bio-name"></span> Shepard was raised on Mindoir on the fringes of the Attican Traverse. When <span class="bio-pronoun"></span> was sixteen, the colony was raided by slavers. The entire settlement was razed and <span class="bio-pronoun-poss"></span> friends and family were slaughtered. A passing Alliance patrol rescued <span class="bio-pronoun-obj"></span>, but all <span class="bio-pronoun"></span> loved was destroyed.</P>
 
             <p><span class="bio-name"></span> enlisted with the Alliance military, eventually volunteering to go to Akuze, a colony that had mysteriously dropped out of contact. As soon as it arrived on the surface, <span class="bio-pronoun-poss"></span> patrol was attacked by thresher maws - mindless abominations of teeth and tentacles that rose up from beneath the earth. Constant gunfire couldn't drown out the shrieks of <span class="bio-pronoun-poss"></span> fellow soldiers as they were dragged down to a gruesome death.</p>
 
-            <p>Fifty marines died on Akuze; <span class="bio-name"></span> were the only one to make it back to the landing zone alive. A monument on the planet commemorates the massacre, a grim reminder of the price humanity must pay as they spread throughout the stars.</p>
+            <p>Fifty marines died on Akuze; <span class="bio-name"></span> was the only one to make it back to the landing zone alive. A monument on the planet commemorates the massacre, a grim reminder of the price humanity must pay as they spread throughout the stars.</p>
         </div>
         <div class="bio colonist hero">
-            <p><span class="bio-name"></span> Shepard was raised on Mindoir on the fringes of the Attican Traverse. When <span class="bio-pronoun"></span> were sixteen, the colony was raided by slavers. The entire settlement was razed and <span class="bio-pronoun-poss"></span> friends and family were slaughtered. A passing Alliance patrol rescued <span class="bio-pronoun-obj"></span>, but all <span class="bio-pronoun"></span> loved was destroyed.</P>
+            <p><span class="bio-name"></span> Shepard was raised on Mindoir on the fringes of the Attican Traverse. When <span class="bio-pronoun"></span> was sixteen, the colony was raided by slavers. The entire settlement was razed and <span class="bio-pronoun-poss"></span> friends and family were slaughtered. A passing Alliance patrol rescued <span class="bio-pronoun-obj"></span>, but all <span class="bio-pronoun"></span> loved was destroyed.</P>
 
-            <p><span class="bio-name"></span> enlisted with the Alliance military and was posted at Elysium. <span class="bio-pronoun" style="text-transform: capitalize"></span> were there during the Skyllian Blitz, an attack on the colony by a massive coalition force of slavers, crime syndicates, and batarian warlords.</p>
+            <p><span class="bio-name"></span> enlisted with the Alliance military and was posted at Elysium. <span class="bio-pronoun" style="text-transform: capitalize"></span> was there during the Skyllian Blitz, an attack on the colony by a massive coalition force of slavers, crime syndicates, and batarian warlords.</p>
 
             <p><span class="bio-name"></span> rallied the civilian inhabitants, leading them in their desperate fight to hold off the invaders. When enemy troops broke through the colony's defenses, <span class="bio-pronoun"></span> single-handedly held them off and sealed the breach.</p>
 
@@ -177,6 +182,7 @@
     </div>
     <div class="container bio bio-link">
         <p>See more infomation for Commander Shepard <a href="http://masseffect.wikia.com/wiki/Commander_Shepard" target="_blank">here</a> </p>
+        <button id="redo-button" class="btn btn-danger">Re-do Biography</button>
     </div>
 </div>
 </body>
