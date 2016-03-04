@@ -1,11 +1,33 @@
 body {
     font-family: Korataki;
-}
-
-.bio-visible {
-    display: block;
+    color: white;
+    background-image: url("http://blog.sailairstudios.com/wp-content/uploads/2012/07/Mass_Effect_N7_Wallpaper_1920x1080.jpg");
+    background-repeat: no-repeat;
+    background-position: top-left;
+    background-attachment: fixed;
+    background-color: black;
 }
 
 .bio-invisible {
     display: none;
+}
+
+.container-fluid {
+    background-color: rgba(3, 95, 145, .5);
+    width: 90vw;
+    border: 3px solid rgba(3, 95, 145, .7);
+    border-radius: 5%;
+}
+
+input[type="text"] {
+    color: black;
+}
+
+.container {
+    margin: 2vw 0;
+}
+
+.img-male, .img-female {
+    width: 40%;
+    height: auto;
 }

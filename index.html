@@ -19,14 +19,14 @@
     
     <script>
         $(document).ready(function() {
-            $(".bio").addClass('bio-invisible');
+            $(".bio, .img-thumbnail").addClass('bio-invisible');
             var name = null; 
             var gender = null;
             var history_class = null; 
             var profile_class = null; 
             
             $("#submit-button").click(function() {
-                $(".bio").addClass('bio-invisible');
+                $(".bio,.img-logo,.img-thumbnail").addClass('bio-invisible');
                 
                 name = $(".name-input input[type=\"text\"]").val();
                 gender = $(".gender-radio input:checked").val();
@@ -34,7 +34,7 @@
                 profile_class = $(".profile-radio input:checked").val();
                      
                 $(".bio-name").html(name);
-                var selectors = "." + history_class + "." + profile_class; 
+                var selectors = "." + history_class + "." + profile_class + ",.bio-link"; 
                 var element = $(selectors);
                 element.removeClass("bio-invisible");
                 if (gender == "male")
@@ -42,12 +42,14 @@
                     $(".bio-pronoun").html("he");
                     $(".bio-pronoun-poss").html("his");
                     $(".bio-pronoun-obj").html("him");
+                    $(".img-male").removeClass("bio-invisible");
                 }
                 else
                 {
                     $(".bio-pronoun").html("she");
                     $(".bio-pronoun-poss").html("her");
                     $(".bio-pronoun-obj").html("her");
+                    $(".img-female").removeClass("bio-invisible");
                 }
             });
         });
@@ -59,7 +61,12 @@
 <div class="container-fluid">
     <h1 class="text-center">Commander Shepard: a Tribute</h1>
     
-    <div class="row text-center"><img src="http://im3.freeforumzone.it/up/37/37/4009612079.jpg" alt="N7 Logo" /></div>
+    <div class="row text-center">
+        <img src="http://vignette2.wikia.nocookie.net/deadliestfiction/images/0/06/Shepard.jpg/revision/latest?cb=20120320203336" class="img-thumbnail img-male" alt="Shepard Male" />
+        <img src="http://beagamecharacter.com/wp-content/uploads/2013/01/mass-effect-3-the-real-female-shepard.jpg" class="img-thumbnail img-female" alt="Shepard Female" />
+        
+        <img src="http://im3.freeforumzone.it/up/37/37/4009612079.jpg" class="img-logo" alt="N7 Logo" />
+        </div>
     
     <h2 class="text-center">Create the Commander's Biography</h2>
     <div class="container">
@@ -122,7 +129,7 @@
         <div class="bio colonist survivor">
             <p><span class="bio-name"></span> Shepard was raised on Mindoir on the fringes of the Attican Traverse. When <span class="bio-pronoun"></span> were sixteen, the colony was raided by slavers. The entire settlement was razed and <span class="bio-pronoun-poss"></span> friends and family were slaughtered. A passing Alliance patrol rescued <span class="bio-pronoun-obj"></span>, but all <span class="bio-pronoun"></span> loved was destroyed.</P>
 
-            <p><span class="bio-name"></span> Shepard enlisted with the Alliance military, eventually volunteering to go to Akuze, a colony that had mysteriously dropped out of contact. As soon as it arrived on the surface, <span class="bio-pronoun-poss"></span> patrol was attacked by thresher maws - mindless abominations of teeth and tentacles that rose up from beneath the earth. Constant gunfire couldn't drown out the shrieks of <span class="bio-pronoun-poss"></span> fellow soldiers as they were dragged down to a gruesome death.</p>
+            <p><span class="bio-name"></span> enlisted with the Alliance military, eventually volunteering to go to Akuze, a colony that had mysteriously dropped out of contact. As soon as it arrived on the surface, <span class="bio-pronoun-poss"></span> patrol was attacked by thresher maws - mindless abominations of teeth and tentacles that rose up from beneath the earth. Constant gunfire couldn't drown out the shrieks of <span class="bio-pronoun-poss"></span> fellow soldiers as they were dragged down to a gruesome death.</p>
 
             <p>Fifty marines died on Akuze; <span class="bio-name"></span> were the only one to make it back to the landing zone alive. A monument on the planet commemorates the massacre, a grim reminder of the price humanity must pay as they spread throughout the stars.</p>
         </div>
@@ -167,6 +174,9 @@
 
             <p>Nearly three-quarters of <span class="bio-name"></span>'s own squad perished in the vicious close-quarters fighting, a cost <span class="bio-pronoun"></span> was willing to pay to make sure not a single slaver made it out of Torfan alive.</p>
         </div>
+    </div>
+    <div class="container bio bio-link">
+        <p>See more infomation for Commander Shepard <a href="http://masseffect.wikia.com/wiki/Commander_Shepard" target="_blank">here</a> </p>
     </div>
 </div>
 </body>
